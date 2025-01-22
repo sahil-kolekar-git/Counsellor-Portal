@@ -17,4 +17,15 @@ public class AppExceptionHandler {
 	public ResponseEntity<String> catchCounsellorNotFoundException(CounsellorNotFoundException exception) {
 		return new ResponseEntity<String>(exception.getMessage(), HttpStatus.BAD_REQUEST);
 	}
+
+	@ExceptionHandler(DuplicateEnquiryException.class)
+	public ResponseEntity<String> catchDuplicateEnquiryException(DuplicateEnquiryException exception) {
+		return new ResponseEntity<String>(exception.getMessage(), HttpStatus.BAD_REQUEST);
+	}
+
+	@ExceptionHandler(EnquiryNotFoundException.class)
+	public ResponseEntity<String> catchEnquiryNotFoundException(EnquiryNotFoundException exception) {
+		return new ResponseEntity<String>(exception.getMessage(), HttpStatus.BAD_REQUEST);
+	}
+
 }
